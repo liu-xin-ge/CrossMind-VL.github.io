@@ -47,7 +47,7 @@
           <h1 class="title is-1 publication-title">Modeling Dynamic Social Vision Highlights Gaps Between Deep Learning and Humans</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <strong>Kathy Garcia</strong><sup>*</sup>,</span>&nbsp;
+              <a href="index_dev.html"><strong>Kathy Garcia</strong><sup>*</sup></a>,</span>&nbsp;
             <span class="author-block">
                 <a href="https://emaliemcmahon.github.io">Emalie McMahon</a><sup>*</sup>,&nbsp;
             </span>
@@ -113,25 +113,24 @@
             many vision models reach the noise ceiling in predicting visual scene features and responses along the ventral visual stream (often considered the primary neural substrate of object and scene recognition). 
             In contrast, image models poorly predict human action and social interaction ratings and neural responses in the lateral stream (a neural pathway increasingly theorized as specializing in dynamic, social vision). 
             Language models (given human sentence captions of the videos) predict action and social ratings better than either image or video models, but they still perform poorly at predicting neural responses in the 
-            lateral stream. Together these results identify a major gap in AI's ability to match human social vision and highlight the importance of studying vision in dynamic, natural contexts.<br><br><br><br>
+            lateral stream. Together these results identify a major gap in AI's ability to match human social vision and highlight the importance of studying vision in dynamic, natural contexts.<br><br><br><br><br>
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Methodological Overview</h2>
         <br>
         <div class="content has-text-justified">
-          <div style="text-align: center;">
+          <div style="text-align: justified;">
             <img src="static/figures/neurips/neurips_fig1.png" alt="Methods Overview">
             <br>
-            <p class="caption" style="width: 100%; text-align: center;"><b>Figure 1: A summary of our overall approach. </b> We extract representations from over 350 image, video, 
-                and language models based on 3 s videos of human social actions or their captions. We then use model representations to predict human behavioral ratings and the neural 
-                responses recorded using fMRI to the videos.<br><br><br></p>
+            <p class="caption" style="width: 100%; text-align: justify;">We extract representations from over 350 image, video,
+                and language Deep Neural Network (DNN) models based on 3-second video inputs of human social actions or their captions. We then use model representations from each layer of the DNN's to predict human behavioral ratings and the neural
+                responses recorded using fMRI of the subjects watching the videos.</p>
           </div>
         </div>
         <br><br>
@@ -140,23 +139,51 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Prediction Performance for Behavioral Responses</h2>
+        <h2 class="title is-3">Prediction Performance for human behavioral ratings and neural responses</h2>
         <div class="content has-text-justified">
-          <div style="text-align: center;">
+          <div style="text-align: justified;">
             <br>
             <img src="static/figures/neurips/neurips_fig2.png" style="display: block; margin-left: auto; margin-right: auto;">
             <br>
-            <p class="caption"><b>Figure 2: Prediction performance of all models in predicting behavioral responses. </b> Each dot is the performance of a single model. The lines indicate the mean 
-                performance for image (pink), video (green), and language (blue) models. The horizontal gray lines are the inter-subject agreement, which is approximately the maximal level that any 
-                model could be expected to perform. Brackets and asterisks indicate significantly different performance between different classes of models. <br>
-                (<em>p</em> &lt; 0.05: *, <em>p</em> &lt; 0.01: **, <em>p</em> &lt; 0.001: ***) </p>
+            <p class="caption">In evaluating the benchmark of models, we compared how the different model classes (image, video, or language)
+              performed on average at predicting behavioral ratings. We note that due to the larger number of image models tested,the best performing model is
+              biased towards the image models. Despite this, we see a large amount of similarity between the different modalities. We find that for the visuospatial ratings
+              (spatial expanse, interagent distance, and agents facing), no model class is substantially better on average (p>0.05), but for each rating the top performing model is an image model.
+            </p>
+            <img src="static/figures/neurips/neurips_fig4.png" style="display: block; margin-left: auto; margin-right: auto;">
+            <br>
+            <p class="caption">As in behavior, we can compare the average performance of the models across modalities. We evaluate performance in Regions of Interest (ROIs).
+              We find that for several mid-level ROIs (MT, EBA, and LOC), video models dramatically outperform image models (ps<0.001).
+              In both early visual cortex and high-level lateral regions(pSTS and aSTS), the quantitative performance gain is moderate and not significantly different (ps>0.05),
+              and the best performing model is an image model.
+            </p>
+            <br>
+            <img src="static/figures/neurips/neurips_fig5.jpeg" style="display: block; margin-left: auto; margin-right: auto;">
+            <br>
+            <p class="caption">We further compared the models on other factors such as architecture and training. Within the image models, we do not find a notable difference in performance for models with either
+              convolutional or transformer architectures or trained through supervised or self-supervision objectives.
+            </p>
+            <br>
+            <img src="static/figures/neurips/neurips_fig7.png" style="display: block; margin-left: auto; margin-right: auto;">
+            <br>
           </div>
         </div>
-        <br><br>
       </div>
-    </div>  
+    </div>
 
     <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
+          <div style="text-align: justified;">
+            <p class="caption">Overall, we found a notable gap in all models’ ability to predict human responses. However, there are differences in the models that are best able to predict thebrain versus behavior.
+              In particular, language models tend to be the best models of human behavioral ratings, while videos models best predict responses in lateral brain regions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--    <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Human-Language Model Alignment</h2>
           <br>
@@ -164,34 +191,17 @@
             <div style="text-align: center;">
               <img src="static/figures/neurips/neurips_fig3.jpeg" alt="Methods Overview">
               <br>
-              <p class="caption" style="width: 100%; text-align: center;"><b>Figure 3: (A) Example sentence perturbations. (B) The performance of each language model (dots) in predicting human behavioral 
-                ratings following selective perturbation of the sentence captions.</b> The bars indicate the mean performance across models for each condition and rating. Asterisks indicate that there is a 
+              <p class="caption" style="width: 100%; text-align: center;"><b>Figure 3: (A) Example sentence perturbations. (B) The performance of each language model (dots) in predicting human behavioral
+                ratings following selective perturbation of the sentence captions.</b> The bars indicate the mean performance across models for each condition and rating. Asterisks indicate that there is a
                 significant degradation in model-behavioral alignment following perturbation relative to the unperturbed sentence.<br><br><br></p>
             </div>
           </div>
           <br><br>
         </div>
-      </div>  
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Model Performances Across Brain ROIs</h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center;">
-              <br>
-              <img src="static/figures/neurips/neurips_fig4.png" style="display: block; margin-left: auto; margin-right: auto;">
-              <br>
-              <p class="caption"><b>Figure 4: The performance of each model (dots) in predicting the average response in each ROI.</b> The colored lines indicate the mean performance of the different classes of models, 
-                and the horizontal gray line is the split-half reliability of the voxel responses in each ROI averaged across participants. Brackets and asterisks indicate significantly different performance between 
-                different classes of models. <br>
-                (<em>p</em> &lt; 0.05: *, <em>p</em> &lt; 0.01: **, <em>p</em> &lt; 0.001: ***) </p>
-            </div>
-          </div>
-          <br><br>
-        </div>
       </div>
+-->
 
-      <div class="columns is-centered has-text-centered">
+<!--      <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Vision Models Capture Neural Responses Better Than Language Models</h2>
           <div class="content has-text-justified">
@@ -211,30 +221,12 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3">Hierarchical Alignment Between Models and Brains</h2>
           <div class="content has-text-justified">
-            <div style="text-align: center;">
+            <div style="text-align: justified;">
               <br>
               <img src="static/figures/neurips/neurips_fig6.jpeg" style="display: block; margin-left: auto; margin-right: auto;">
               <br>
               <p class="caption"><b>Figure 6: Whole-brain hierarchical alignment. </b>Relative depth of the best performing model layer across all vision models (image and video models) 
                 in the whole brain of one representative subject. </p>
-            </div>
-          </div>
-          <br><br>
-        </div>
-      </div>
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Model Performance Difference by Architecture</h2>
-          <div class="content has-text-justified">
-            <div style="text-align: center;">
-              <br>
-              <img src="static/figures/neurips/neurips_fig7.png" style="display: block; margin-left: auto; margin-right: auto;">
-              <br>
-              <p class="caption"><b>Figure 7: Model performance by architecture.</b> We evaluate the impact of model architecture (convo- lutional vs. transformer) on the prediction 
-                of human ratings. Each dot represents the best fitting layer of a model, with solid bars denoting mean encoding score for a given cluster per behavioral rating. In gray 
-                bars, we plot the reliability as a noise ceiling for our data. The graph shows that architectural differences do not significantly impact the models' predictive capabilities 
-                for the tasks studied.</p>
             </div>
           </div>
           <br><br>
@@ -258,6 +250,7 @@
           <br><br>
         </div>
       </div>
+
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -327,6 +320,7 @@
           <br><br>
         </div>
       </div>
+-->
       
 
   </div>

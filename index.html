@@ -208,8 +208,14 @@
             <img src="static/figures/model.png" alt="Triplet Odd-One-Out Task">
             <br>
             <p class="caption" style="width: 100%; text-align: justify;">
-                Participants were presented with three videos and asked to select the odd-one-out while focusing on what people are doing. 
-                The two videos not chosen are labeled as "similar" and the odd-one-out selection is labeled as dissimilar to both others. With this method, we collected 3 pairwise similaritty judgments for each triplet.
+                (a) Training Pipeline of CrossMind-VL. Initially, Qwen2-VL is employed
+to annotate the stimulus video content in detail. Subsequently, CLIP is utilized to extract image and text features from the
+videos. Finally, contrastive learning is applied to align the features of the three modalities—image, text, and brain signals—into
+a unified representational space. (b) Multi-frame integration module.We aggregate fMRI signals within a fixed time window
+using a weighted exponential decay strategy. (c) Architecture of the BrainMoE module. This module employs a decoupled
+approach, utilizing subject-specific layers to extract unique information for each subject and subject-shared layers to extract
+visual features common to all subjects. (d) Inference Pipeline of CrossMind-VL. By performing nearest neighbor search in CLIP
+space across a video candidate pool, we can retrieve the original video using only brain activity patterns.
             </p>
             <br>
           </div>
@@ -219,21 +225,16 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">RSA Overview</h2>
+        <h2 class="title is-3">Top-10 retrieval results on the CC2017 dataset</h2>
         <br>
         <div class="content has-text-justified">
           <div style="text-align: justified;">
-            <img src="static/figures/sim_judg/rsa_methods.png" alt="RSA Overview">
+            <img src="static/figures/retrieval.png" alt="RSA Overview">
             <br><br>
             <p class="caption" style="width: 100%; text-align: justify;">
-                To reveal the representations that best align with human perception of social events, we began with a set of 3-second social videos from the MiT dataset. For each video, we extracted behavioral features 
-                (e.g., ratings of positivity and interaction type) and deep neural network (DNN) features from prior benchmarking work. Each of these sources was used to generate a representational similarity matrix (RSM) 
-                that quantified how similarly the videos were represented by each source. In parallel, we collected human similarity judgments using a triplet odd-one-out task, where participants viewed sets of three videos 
-                and selected the one least similar to the others. Aggregating over thousands of such choices, we constructed a similarity probability: the similarity probability for each video pair was computed as the proportion 
-                of times that pair was judged as similar when presented together. This resulted in a 200 x 200 matrix capturing perceived similarity among all video pairs in the train set. Finally, we performed representational
-                similarity analysis (RSA) to directly compare the human-derived similarity probability matrix with RSMs derived from behavioral features and DNNs. This framework allowed us to systematically assess which source 
-                best captures the structure of human social perception.
-            </p>
+               Retrieved videos are highlighted with red borders. It should
+be noted that the natural images included in the schematic are sourced from the open-access dataset CC2017 (
+https://purr.purdue.edu/publications/2809/1), which is licensed under the CC0 1.0 Universal Public Domain Dedication.
           </div>
         </div>
         <br><br>

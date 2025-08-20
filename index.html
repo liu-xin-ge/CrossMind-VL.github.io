@@ -261,25 +261,15 @@ https://purr.purdue.edu/publications/2809/1), which is licensed under the CC0 1.
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Variance Partitioning</h2>
+        <h2 class="title is-3">Retrieval accuracy (%) on CC2017 dataset</h2>
         <div class="content has-text-justified">
           <div style="text-align: justified;">
             <br>
-            <img src="static/figures/sim_judg/methods_variance_part.png" alt="Variance Partitioning Methods" style="display: block; margin-left: auto; margin-right: auto;">
+            <img src="static/figures/stable1.png" alt="Variance Partitioning Methods" style="display: block; margin-left: auto; margin-right: auto;">
             <br>
-            <p class="caption"><b>Variance Paritioning Methods.</b> We used variance partitioning to quantify the unique and shared contributions of different feature sets to explaining human similarity judgments.
-                (Left) Explained variance when including all feature sets: behavioral attributes (intimacy, dominance, indoor/outdoor, valence, arousal) and model-derived representations (language, image, video DNNs).
-                (Center) Explained variance by all behavioral attributes, excluding DNN features, highlights the variance captured by interpretable features alone.
-                (Right) Unique variance explained by DNN models, after accounting for all other features, reveals the distinct contribution of language, image, and video DNNs to human similarity judgments.
-            </p>
-            <br>
-            <img src="static/figures/sim_judg/variance_part.png" style="display: block; margin-left: auto; margin-right: auto;">
-            <br>
-            <p class="caption">
-                <b>(a) Variance partitioning for behavioral features, showing the unique variance (UV; purple)</b> explained by each feature and the shared variance (gray) across all features. Intimacy provides the largest unique contribution among behavioral features.
-                <b>(b) Unique and shared variance explained by language, image, and video DNN models</b>, with language models accounting for the most unique variance among DNNs. Together, DNNs explain a greater total variance than behavioral features alone.
-                <b>(c) Partitioning of variance explained when combining behavioral features and DNNs.</b> While a substantial portion of variance is shared between the two sources (gray), DNNs explain meaningful unique variance not captured by behavioral features, and vice versa. 
-                The combined total approaches the split-half reliability ceiling (dashed line), indicating that together, DNN and behavioral features provide a comprehensive account of the explainable variance in human similarity judgments for social videos.
+            <p class="caption"><b>For the “small test set”, the chance-level accuracies for top-10 and top-100
+accuracy are 0.83% and 8.3%, respectively. For the “large test set”, the chance-level accuracies for top-10 and top-100 accuracy
+are 0.24% and 2.4%, respectively.
             </p>
             <br><br>
           </div>

@@ -68,7 +68,7 @@
           </div>
           <br>
           <div class="is-size-4 publication-authors">
-            <span class="author-block">Johns Hopkins University</span>
+            <span class="author-block">Beijing University of Posts and Telecommunications</span>
           </div>
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -109,16 +109,36 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            How do humans perceive naturalistic social scenes, especially in dynamic contexts? Similarity judgments offer critical insight into the mental representations humans use to perceive actions, form categories, 
-            and predict behavior. Real-world perception is complex and dynamic, involving features that static representations fully cannot capture. While prior research has focused on static scenes, less is understood about 
-            the features driving human similarity judgments in dynamic settings and their alignment with representations learned by deep neural networks (DNNs). To address this, we collected ~65,000+ similarity 
-            judgments with a triplet odd-one-out task generated from a curated dataset of 250 three-second videos depicting everyday human actions—a scale far exceeding comparable studies. We then constructed a similarity 
-            matrix for all 250 videos, computing <em>p(i, j)</em>, the likelihood of participants selecting stimuli <i>i</i> and <i>j</i> as similar when paired with different third videos. Finally, these similarity judgments were compared to human ratings 
-            across visual and social scene features, fMRI responses, video DNN extractions, and word embeddings derived from human-written captions, using representational similarity analysis (RSA). The results reveal striking patterns 
-            in human perception: word embeddings of video captions, reflecting how humans choose to describe the videos, showed the strongest correlation with overall similarity judgments, followed by ratings of “intimacy” 
-            (relational closeness) and video DNN embeddings. Similarity judgements correlated significantly with neural responses in regions, including EBA, LOC, STS (lateral stream) and FFA (ventral stream), but not early visual 
-            (EVC) or scene-specific (PPA) areas, underscoring the dominance of social over scene features. Together, these findings highlight the alignment between linguistic descriptions and cognitive strategies, revealing how verbal 
-            encodings of social features capture key mental processes shaping our understanding of dynamic social scenes.<br><br><br><br><br>
+            Decoding dynamic visual information from brain activity remains
+            challenging due to inter-subject neural heterogeneity, limited persubject
+            data availability, and the substantial temporal resolution
+            gap between fMRI signals (0.5Hz) and video dynamics (30Hz). Current
+            approaches face persistent challenges in addressing these
+            temporal mismatches, demonstrate limited capacity to integrate
+            subject-specific neural patterns with shared representational frameworks,
+            and lack adequate semantic granularity for aligning neural
+            responses with visual content. To bridge these gaps, we propose
+            CrossMind-VL, a framework addressing these limitations through
+            three innovations: (1) a Dynamic Temporal Alignment module that
+            resolves temporal mismatches via exponentially decayed multiframe
+            fusion with adaptive decay coefficients; (2) a Brain Mixtureof-
+            Experts architecture that combines subject-specific extractors
+            with shared expert layers through parameter-efficient tri-modal
+            contrastive learning; and (3) a Multi-perspective Semantic Hyper-
+            Anchoring module that resolves cross-subject attention bias via
+            multi-dimensional semantic decomposition, leveraging multimodal
+            LLMs for fine-grained video semantic extraction—enabling the
+            model to match individual attention patterns as different subjects
+            naturally focus on distinct aspects of the same visual stimulus. This
+            module boosts Top-10/Top-100 retrieval by 17.7%/6.6%. Experiments
+            on two video-fMRI datasets demonstrate state-of-the-art performance,
+            with 39%/30% improvements in Top-10/Top-100 accuracy
+            over single-subject baselines and 27% gains against multi-subject
+            models. The framework exhibits remarkable few-shot adaptability,retaining 97% performance when using only 10% training data for
+            new subjects. Visualization analysis confirms this generalization
+            capability stems from effective disentanglement of subject-specific
+            and shared neural representations.
+            
           </p>
         </div>
       </div>
@@ -137,7 +157,7 @@
     }
     </style>
     
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <br>
         <div class="video-row">
@@ -159,9 +179,9 @@
         </div>
         <br><br><br>
       </div>
-    </div>
+    </div> -->
 
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Behavioral Feature Dimensions</h2>
         <br>
@@ -177,11 +197,11 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Triplet Odd-One-Out Task</h2>
+        <h2 class="title is-3">The framework of the proposed CrossMind-VL</h2>
         <br>
         <div class="content has-text-justified">
           <div style="text-align: justified;">

@@ -265,7 +265,7 @@ https://purr.purdue.edu/publications/2809/1), which is licensed under the CC0 1.
         <div class="content has-text-justified">
           <div style="text-align: justified;">
             <br>
-            <img src="static/figures/stable1.png" alt="Variance Partitioning Methods" style="display: block; margin-left: auto; margin-right: auto;">
+            <img src="static/figures/table1.png" alt="Variance Partitioning Methods" style="display: block; margin-left: auto; margin-right: auto;">
             <br>
             <p class="caption"><b>For the “small test set”, the chance-level accuracies for top-10 and top-100
 accuracy are 0.83% and 8.3%, respectively. For the “large test set”, the chance-level accuracies for top-10 and top-100 accuracy
@@ -279,19 +279,16 @@ are 0.24% and 2.4%, respectively.
 
     <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-            <h2 class="title is-3">Neural Variance Explained by Social Similarity Judgments</h2>
+            <h2 class="title is-3">Retrieval accuracy (%) on HCP dataset</h2>
             <br>
             <div class="content has-text-justified">
                 <div style="text-align: justified;">
-                    <img src="static/figures/sim_judg/neural.png" alt="Explained Variance by Neural ROIs">
+                    <img src="static/figures/table2.png" alt="Explained Variance by Neural ROIs">
                     <br><br>
                     <p class="caption" style="width: 100%; text-align: justify;">
-                    <b>(a) Neural RSA.</b> Bar plot showing the proportion of variance (R²) in human similarity judgments explained by different lateral (left) and ventral (right) brain regions of interest (ROIs). 
-                    Mid-level lateral ROIs, particularly EBA (extrastriate body area) and LOC (lateral occipital complex), explain the greatest variance, followed by MT and pSTS regions, indicating that mid- and high-level social perception areas are most strongly aligned with behavioral similarity structure. 
-                    Early visual cortex (EVC) and the scene-selective PPA (parahippocampal place area) show little to no alignment, suggesting low-level visual and scene features are not major drivers of social similarity judgments. 
-                    The face-selective FFA (fusiform face area) in the ventral pathway also explains significant variance, highlighting the importance of face processing in social perception.
-                    <b>(b) Searchlight RSA.</b> Surface maps illustrating the distribution of explained variance across the cortex, with color indicating R² values. 
-                    Regions in the lateral temporal and occipital cortex show the highest alignment with human similarity judgments.
+                    For the “small test set”, the chance-level accuracies for top-10 and top-100
+accuracy are 3.29% and 32.9%, respectively. For the “large test set”, the chance-level accuracies for top-10 and top-100 accuracy
+are 0.66% and 6.6%, respectively.
                     </p>
                 </div>
             </div>
@@ -305,10 +302,22 @@ are 0.24% and 2.4%, respectively.
         <div class="content has-text-justified">
         <div style="text-align: justified;">
             <p class="caption">
-            Our findings highlight three key conclusions: 
-            <b>(1)</b> human judgments of social interactions rely most strongly on higher-order social appraisal features, such as intimacy and dominance, rather than on lower-level visual cues.
-            <b>(2)</b> deep neural networks—especially language models—explain a substantial portion of variance in human similarity judgments. However, some variance is uniquely captured by behavioral features, suggesting that DNNs and humans focus on overlapping but distinct aspects of social scenes.
-            <b>(3)</b> we introduce a comprehensive dataset and framework for benchmarking models of social perception, providing behavioral annotations, similarity judgments, and brain data to enable rigorous evaluation of future models.
+            We present CrossMind-VL, a unified framework for cross-subject
+brain decoding of dynamic visual stimuli that addresses three key
+challenges:
+            <b>(1)</b> the temporal mismatch between fMRI hemodynamics
+(0.5 Hz) and video dynamics (30 Hz)
+            <b>(2)</b> the joint modeling
+of subject-specific and shared neural representations
+            <b>(3)</b> the
+limitations of conventional semantic alignment for dynamic scenes.
+Our solution introduces: 
+<b>(1)</b> an exponentially decayed multi-frame
+fusion mechanism for temporal alignment. <b>(2)</b> a hierarchical architecture
+combining parameterized subject-specific layers with a
+gated MoE shared representation layer.<b>(3)</b> a multi-granularity
+alignment paradigm using Qwen-VL to establish an image-textbrain
+contrastive learning space.
             </p>
         </div>
         </div>
